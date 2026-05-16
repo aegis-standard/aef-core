@@ -1,0 +1,39 @@
+# AEF Semantics Registry v1.0
+# FROZEN — 只追加，不修改，不删除
+
+actions:
+  - name: task.created
+    version: 1.0
+    meaning: "新任务被创建。payload 包含 goal 字段。"
+    rfc: RFC-0001
+    frozen: 2026-05-16
+
+  - name: task.completed
+    version: 1.0
+    meaning: "任务成功完成。payload 包含 final_summary 字段。"
+    rfc: RFC-0001
+    frozen: 2026-05-16
+
+  - name: tool.call.started
+    version: 1.0
+    meaning: "工具调用开始执行。payload 包含 tool_name 和 input。"
+    rfc: RFC-0004
+    frozen: 2026-05-16
+
+  - name: tool.call.completed
+    version: 1.0
+    meaning: "工具调用成功完成。payload 包含 tool_name 和 output。"
+    rfc: RFC-0004
+    frozen: 2026-05-16
+
+  - name: tool.call.error
+    version: 1.0
+    meaning: "工具调用失败。payload 包含 tool_name 和 error。"
+    rfc: RFC-0004
+    frozen: 2026-05-16
+
+  - name: human.override
+    version: 1.0
+    meaning: "人类显式覆盖 AI 输出。payload 必须包含 original_output, corrected_output, override_reason。中断因果链确定性。"
+    rfc: RFC-0005
+    frozen: 2026-05-16
