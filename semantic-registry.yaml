@@ -1,39 +1,91 @@
-# AEF Semantics Registry v1.0
-# FROZEN — 只追加，不修改，不删除
+# Semantic Registry v1.0
+# Only append; never overwrite.
 
-actions:
-  - name: task.created
-    version: 1.0
-    meaning: "新任务被创建。payload 包含 goal 字段。"
-    rfc: RFC-0001
-    frozen: 2026-05-16
+event_types:
 
-  - name: task.completed
-    version: 1.0
-    meaning: "任务成功完成。payload 包含 final_summary 字段。"
-    rfc: RFC-0001
-    frozen: 2026-05-16
+  task.created:
+    current_semantic_version: 1.0
+    meaning: "Initiates a new task with the user's original goal."
+    introduced_at: 2026-05-16
+    category: cognitive
+    history:
+      - version: 1.0
+        meaning: "Initial definition."
 
-  - name: tool.call.started
-    version: 1.0
-    meaning: "工具调用开始执行。payload 包含 tool_name 和 input。"
-    rfc: RFC-0004
-    frozen: 2026-05-16
+  task.plan.generated:
+    current_semantic_version: 1.0
+    meaning: "Orchestrator produced a plan of subtasks and agent assignments."
+    introduced_at: 2026-05-16
+    category: cognitive
+    history: [...]
 
-  - name: tool.call.completed
-    version: 1.0
-    meaning: "工具调用成功完成。payload 包含 tool_name 和 output。"
-    rfc: RFC-0004
-    frozen: 2026-05-16
+  agent.call.started:
+    current_semantic_version: 1.0
+    meaning: "A single agent begins a reasoning cycle (may include multiple tool calls)."
+    introduced_at: 2026-05-16
+    category: mechanical
+    history: [...]
 
-  - name: tool.call.error
-    version: 1.0
-    meaning: "工具调用失败。payload 包含 tool_name 和 error。"
-    rfc: RFC-0004
-    frozen: 2026-05-16
+  agent.call.completed:
+    current_semantic_version: 1.0
+    meaning: "Agent reasoning cycle finished, returning final output."
+    introduced_at: 2026-05-16
+    category: mechanical
+    history: [...]
 
-  - name: human.override
-    version: 1.0
-    meaning: "人类显式覆盖 AI 输出。payload 必须包含 original_output, corrected_output, override_reason。中断因果链确定性。"
-    rfc: RFC-0005
-    frozen: 2026-05-16
+  tool.call.started:
+    current_semantic_version: 1.0
+    meaning: "Invocation of an external tool or function."
+    introduced_at: 2026-05-16
+    category: mechanical
+    history: [...]
+
+  tool.call.completed:
+    current_semantic_version: 1.0
+    meaning: "Tool execution finished, returning result."
+    introduced_at: 2026-05-16
+    category: mechanical
+    history: [...]
+
+  agent.error:
+    current_semantic_version: 1.0
+    meaning: "An agent encountered an error during execution."
+    introduced_at: 2026-05-16
+    category: mechanical
+    history: [...]
+
+  agent.recovery.attempt:
+    current_semantic_version: 1.0
+    meaning: "System attempted to recover from an error, either automatically or with human help."
+    introduced_at: 2026-05-16
+    category: mechanical
+    history: [...]
+
+  human.intervention:
+    current_semantic_version: 1.0
+    meaning: "Human provided feedback or correction to an agent."
+    introduced_at: 2026-05-16
+    category: governance
+    history: [...]
+
+  human.override:
+    current_semantic_version: 1.0
+    meaning: "Human explicitly changed agent output. Must include override_reason."
+    introduced_at: 2026-05-16
+    category: governance
+    required_fields: [original_output, corrected_output, override_reason]
+    history: [...]
+
+  memory.updated:
+    current_semantic_version: 1.0
+    meaning: "A long-term memory entry was created or modified."
+    introduced_at: 2026-05-16
+    category: governance
+    history: [...]
+
+  task.completed:
+    current_semantic_version: 1.0
+    meaning: "Task successfully finished with final synthesized result."
+    introduced_at: 2026-05-16
+    category: cognitive
+    history: [...]
