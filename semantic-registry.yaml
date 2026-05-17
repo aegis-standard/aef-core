@@ -70,7 +70,7 @@ event_types:
 
   human.override:
     current_semantic_version: 1.0
-    meaning: "Human explicitly changed agent output. Must include override_reason."
+        meaning: "人类显式覆盖 AI 输出。payload 必须包含 original_output, corrected_output, override_reason。中断因果链确定性。"
     introduced_at: 2026-05-16
     category: governance
     required_fields: [original_output, corrected_output, override_reason]
