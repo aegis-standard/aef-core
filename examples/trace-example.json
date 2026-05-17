@@ -13,11 +13,13 @@
       "payload": {
         "goal": "实现用户认证模块"
       },
-      "integrity_hash": "a1b2c3d4e5f6a7b8c9d0e1f2a3b4c5d6e7f8a9b0c1d2e3f4a5b6c7d8e9f0a1b2",
+      "integrity_hash": "9068a990817d92c852e0c0d4cc14ab3407609eb1d0d361f9aee3ec45e1a7aba7",
       "metadata": {
         "source": "claw-reference",
         "schema_version": "1.0",
-        "tags": ["example"]
+        "tags": [
+          "example"
+        ]
       }
     },
     {
@@ -35,11 +37,13 @@
           "spec": "用户登录与注册 API"
         }
       },
-      "integrity_hash": "b2c3d4e5f6a7b8c9d0e1f2a3b4c5d6e7f8a9b0c1d2e3f4a5b6c7d8e9f0a1b2c3",
+      "integrity_hash": "314b5e1d7f0dfdb49407947b2e54f11252e037d629de6135845de93ae555ecaf",
       "metadata": {
         "source": "claw-reference",
         "schema_version": "1.0",
-        "tags": ["example"]
+        "tags": [
+          "example"
+        ]
       }
     },
     {
@@ -53,15 +57,20 @@
       "payload": {
         "tool_name": "code_generator",
         "output": {
-          "files": ["auth.py", "models.py"],
+          "files": [
+            "auth.py",
+            "models.py"
+          ],
           "lines_of_code": 150
         }
       },
-      "integrity_hash": "c3d4e5f6a7b8c9d0e1f2a3b4c5d6e7f8a9b0c1d2e3f4a5b6c7d8e9f0a1b2c3d4",
+      "integrity_hash": "0d4bad7265a734761c35ca9b78f2358065884812d56b73c7ca5f7454ab8fa01a",
       "metadata": {
         "source": "claw-reference",
         "schema_version": "1.0",
-        "tags": ["example"]
+        "tags": [
+          "example"
+        ]
       }
     },
     {
@@ -79,11 +88,14 @@
         "override_scope": "full",
         "related_event_id": "evt-003"
       },
-      "integrity_hash": "d4e5f6a7b8c9d0e1f2a3b4c5d6e7f8a9b0c1d2e3f4a5b6c7d8e9f0a1b2c3d4e5",
+      "integrity_hash": "e3a851fae0273427b85d3454c23d73c2a67a91b41fb6894fcae62b192b6faead",
       "metadata": {
         "source": "claw-reference",
         "schema_version": "1.0",
-        "tags": ["example", "key-node"]
+        "tags": [
+          "example",
+          "key-node"
+        ]
       }
     },
     {
@@ -97,11 +109,13 @@
       "payload": {
         "final_summary": "认证模块已完成，支持双因素认证"
       },
-      "integrity_hash": "e5f6a7b8c9d0e1f2a3b4c5d6e7f8a9b0c1d2e3f4a5b6c7d8e9f0a1b2c3d4e5f6",
+      "integrity_hash": "cf34042894f7bfd6a2211a86c5001830f2ebaa2f4b64bb7557687fdd4c5511c7",
       "metadata": {
         "source": "claw-reference",
         "schema_version": "1.0",
-        "tags": ["example"]
+        "tags": [
+          "example"
+        ]
       }
     }
   ]
