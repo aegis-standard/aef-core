@@ -42,19 +42,13 @@ AEF 定义了 **"AI 行为什么叫真实发生"**。它不是框架、不是平
 ### 模式 A：Hooks Adapter（最低侵入）
 ```bash
 /hooks add pre-tool python aef-producer.py tool {tool_name}
-
-
 模式 B：Sidecar Gateway（旁路记录）
-
+text
 Agent Runtime → Observable Gateway → AEF Events → Traccia
-
 模式 C：Native Runtime（原生实现）
-
+python
 from event_bus import EventBus
 bus.emit(action="tool.call.completed", payload={...})
-
-Runtime 直接产生符合 AEF Core Schema 的事件。
-
 事件核心字段 (RFC-0001)
 字段	类型	说明
 id	UUID v4	事件全局唯一标识
@@ -87,10 +81,18 @@ L4	字节级确定	逐事件哈希一致
 Claw	AEF Reference Runtime（执行黑匣子）	claw-reference
 Traccia	认知时间线 + 记忆蒸馏	raccia
 ERC	责任收据引擎	erc
+生态兼容
+AEF 可以与以下开源项目配合使用，形成完整的 AI Agent 基础设施栈：
+
+项目	类型	与 AEF 的协作方式
+AgentMemory	持久记忆	AgentMemory 负责存储记忆，AEF 负责记录记忆的生成过程
+DeepSeek-TUI	终端 Agent	AEF MCP 插装层可旁路记录所有 CLI 操作
+9router	AI 路由	9router 处理模型路由，AEF ERC Gateway 处理 Key 管理 + 审计
+Anthropic Financial Services	金融 Agent	金融合规场景需要不可篡改的执行证据链
+AI-Trader	量化交易	交易决策的每一步都可记录为 AEF 事件，支持事后审计
+UI-TARS	UI 自动化	UI 操作的每一步都可回放和验证
 许可证
 AEF 标准本身采用 CC0 1.0 Universal 进入公共领域。
 
 治理
 AEF 由 Steering Committee (ASC) 治理。RFC 流程：提交草案 → 社区讨论 → 实现验证 → ASC 投票。详见 CONTRIBUTING.md
-
-
